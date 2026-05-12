@@ -1,0 +1,93 @@
+/* 1. Imports */
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import "tailwindcss";
+
+/* 2. Theme Configuration */
+@theme {
+  /* Core Colors (Keeping only what's essential for your design) */
+  --color-primary: #000000;
+  --color-secondary: #0057c0;
+  --color-background: #fdf8f8;
+  --color-surface: #ffffff;
+  --color-error: #ee0000;
+  --color-success: #0070f3;
+  --color-outline: #747878;
+  
+  /* Your Clean/Dark custom colors */
+  --color-base-bg: #0a0a0a;
+  --color-surface-dark: #121212;
+  --color-emerald: #10b981;
+
+  /* Fonts */
+  --font-geist: "Geist", "Inter", sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  /* Unified Border Radius */
+  --radius-default: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+
+  /* Simplified Spacing */
+  --spacing-xs: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-section: 192px;
+}
+
+/* 3. Global Styles */
+@layer base {
+  body {
+    @apply font-geist antialiased;
+  }
+
+  /* Utility for Material Symbols */
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* 4. Text Preset Shortcuts (Replacing the bulky fontSize map) */
+@layer utilities {
+  .text-display { @apply text-[32px] leading-[40px] tracking-[-1.28px] font-semibold; }
+  .text-body { @apply text-[16px] leading-lg font-normal; }
+  .text-caption { @apply text-[12px] leading-md font-normal text-outline; }
+  .text-code { @apply font-mono text-[13px] leading-[20px]; }
+}
+
+/* WalletMultiButton Overrides */
+.wallet-adapter-button,
+.wallet-adapter-button-trigger {
+  height: 48px !important;
+  border-radius: 12px !important;
+  background-color: #10b981 !important; /* emerald-500 */
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  transition: opacity 150ms ease, transform 150ms ease !important;
+}
+
+.wallet-adapter-button:hover,
+.wallet-adapter-button-trigger:hover {
+  background-color: #10b981 !important;
+  opacity: 0.9 !important;
+}
+
+.wallet-adapter-button:active,
+.wallet-adapter-button-trigger:active {
+  transform: scale(0.95) !important;
+}
