@@ -15,6 +15,7 @@
     "@solana/wallet-adapter-wallets": "^0.19.38",
     "@solana/web3.js": "^1.98.4",
     "bun-plugin-tailwind": "^0.1.2",
+    "date-fns": "^4.1.0",
     "react": "^19",
     "react-dom": "^19",
     "tailwindcss": "^4.1.11"
